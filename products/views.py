@@ -5,6 +5,6 @@ def shop(r):
     hameye_mahsoolat = Product.objects.all()
     return render(r, "products/shop.html", {'products': hameye_mahsoolat})
 
-def product(r, item):
-    mahsool = Product.objects.get(slug=item)
-    return render(r, "products/product.html")
+def product_detail(r, pk):
+    mahsool = Product.objects.get(pk=pk)
+    return render(r, "products/product.html", {'product':mahsool})

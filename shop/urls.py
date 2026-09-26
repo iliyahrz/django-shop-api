@@ -27,7 +27,7 @@ urlpatterns = [
     path('', index, name="home"),
     path('contact', contact, name="contact"),
     path('shop', shop, name="shop"),
-    path('product/<slug:slug>/', Product, name='product-item'),     
+    path('product/<int:pk>/', product_detail, name='product-item'),     
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
